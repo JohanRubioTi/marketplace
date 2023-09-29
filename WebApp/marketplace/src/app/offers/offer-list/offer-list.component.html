@@ -1,0 +1,13 @@
+<div *ngFor="let offer of offers" class="offer-item">
+  <app-offer-item [offer]="offer"></app-offer-item>
+</div>
+
+<div class="pager">
+  <ng-container *ngIf="page.pageCount > 1">
+    <button class="page-link" [disabled]="page.isFirstPage" (click)="goToPage(page.previousPageIndex)">Previous</button>
+    <ng-container *ngFor="let pageIndex of page.getNextPageIndexes()">
+      <button class="page-link" (click)="goToPage(pageIndex)" [class.active]="pageIndex === page.pageIndex">{{ pageIndex + 1 }}</button>
+    </ng-container>
+    <button class="page-link" [disabled]="page.isLastPage" (click)="goToPage(page.nextPageIndex)">Next</button>
+  </ng-container>
+</div>

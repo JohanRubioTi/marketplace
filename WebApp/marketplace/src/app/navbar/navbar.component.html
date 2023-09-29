@@ -1,0 +1,19 @@
+<div class="navbar">
+  <div class="navbar-content">
+    <div class="logo">
+      <span>ROSEN Marketplace</span>
+    </div>
+    <nav class="desktop-nav" *ngIf="isDesktop">
+      <a routerLink="/heroes">List</a>
+      <a routerLink="/heroes">Post new</a>
+    </nav>
+    <div class="user-info">
+      <span>Hello, (USERNAME)</span>
+    </div>
+    <div class="mobile-menu-icon" *ngIf="isMobile">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+</div>

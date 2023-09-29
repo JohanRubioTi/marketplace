@@ -1,0 +1,48 @@
+.offer-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns by default */
+
+  margin: 0 20px; /* Add side margin on desktop */
+
+  @media (max-width: 991px) {
+    /* Tablet styles */
+    grid-template-columns: 1fr; /* 1 column on tablets */
+    margin: 0; /* Remove side margin on tablet */
+  }
+
+  @media (max-width: 767px) {
+    /* Phone styles */
+    grid-template-columns: 1fr; /* 1 column on phones */
+    margin: 0; /* Remove side margin on phones */
+  }
+}
+
+.pager {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  button.page-link {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #eee;
+    }
+
+    &.active {
+      background-color: #007bff;
+      color: #fff;
+      cursor: default;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+}
